@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.triumphxx.consumer.dao.TransactionLogDao">
-    <resultMap id="BaseResultMap" type="com.triumphxx.consumer.entity.TransactionLog">
+<mapper namespace="com.triumphxx.producer.dao.TransactionLogDao">
+    <resultMap id="BaseResultMap" type="com.triumphxx.producer.entity.TransactionLog">
         <id column="id" jdbcType="VARCHAR" property="id"/>
         <result column="business" jdbcType="VARCHAR" property="business"/>
         <result column="foreign_key" jdbcType="VARCHAR" property="foreignKey"/>
@@ -19,13 +19,13 @@
         delete from transaction_log
         where id = #{id,jdbcType=VARCHAR}
     </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.triumphxx.consumer.entity.TransactionLog"
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.triumphxx.producer.entity.TransactionLog"
             useGeneratedKeys="true">
         insert into transaction_log (id,business, foreign_key)
         values (#{id,jdbcType=VARCHAR},#{business,jdbcType=VARCHAR}, #{foreignKey,jdbcType=VARCHAR})
     </insert>
     <insert id="insertSelective" keyColumn="id" keyProperty="id"
-            parameterType="com.triumphxx.consumer.entity.TransactionLog" useGeneratedKeys="true">
+            parameterType="com.triumphxx.producer.entity.TransactionLog" useGeneratedKeys="true">
         insert into transaction_log
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="business != null">
@@ -44,7 +44,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.triumphxx.consumer.entity.TransactionLog">
+    <update id="updateByPrimaryKeySelective" parameterType="com.triumphxx.producer.entity.TransactionLog">
         update transaction_log
         <set>
             <if test="business != null">
@@ -56,7 +56,7 @@
         </set>
         where id = #{id,jdbcType=VARCHAR}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.triumphxx.consumer.entity.TransactionLog">
+    <update id="updateByPrimaryKey" parameterType="com.triumphxx.producer.entity.TransactionLog">
         update transaction_log
         set business = #{business,jdbcType=VARCHAR},
         foreign_key = #{foreignKey,jdbcType=VARCHAR}
