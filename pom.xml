@@ -43,12 +43,8 @@
         <module>scheduled-boot</module>
         <!--文件操作-->
         <module>files-handle</module>
-        <!--邮件发送-->
-        <module>email</module>
         <!--auth2 相关学习-->
         <module>auth-code</module>
-        <!--商品热卖排行榜-->
-        <module>triumphxxtop</module>
         <module>auth-code</module>
         <module>demo</module>
         <!--接扣安全相关 -->
