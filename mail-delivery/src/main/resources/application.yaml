@@ -1,0 +1,16 @@
+server:
+  port: 8888
+
+wangyp:
+  email:
+    urlCommon: http://api.sendcloud.net/apiv2/mail/send
+    urlTemplate: http://api.sendcloud.net/apiv2/mail/sendtemplate
+    apiUser: WypHdx126321_test_XOj7kD
+    apiKey: h6zfnZqx43fIgF3M
+    rcpt_to: 550902023@qq.com
+    subject: 祝愿**每天开心
+    html: ...
+    encodedType: UTF-8
+    fromAddress: triumphxx@163.comFdhta5fvzjHZN2UfwkR1msNbfCioy9HI.sendcloud.org
+    fromName: 某某科技股份有限公司
+    templateInvokeName: xiaomao

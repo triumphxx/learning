@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.4</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <modules>
+        <!--debug相关功能学习-->
+        <module>debug-learning</module>
+        <!--java基础-->
+        <module>calculate-modifier</module>
+        <!--java锁-->
+        <module>concurrent-lock</module>
+        <!--网络基础-->
+        <module>net-model</module>
+        <!--jvm相关知识-->
+        <module>jvm</module>
+        <!--设计模式-->
+        <module>design-pattern</module>
+        <!--JUC相关知识-->
+        <module>JUC</module>
+        <!--线程池相关-->
+        <module>ThreadPool</module>
+        <!--框架Spring-->
+        <module>spring</module>
+        <!--数据结构与算法-->
+        <module>datastruc-algor</module>
+        <!--volatile相关知识点-->
+        <module>volatile-verify</module>
+        <!--io相关知识点-->
+        <module>io-verify</module>
+        <!--分布式事务相关知识点-->
+        <module>dis-transaction</module>
+        <!--日志框架-->
+        <module>log</module>
+        <!--大数据量需求处理-->
+        <module>big-data</module>
+        <!--定时任务-->
+        <module>scheduled-boot</module>
+        <!--文件操作-->
+        <module>files-handle</module>
+        <!--邮件发送-->
+        <module>email</module>
+        <!--auth2 相关学习-->
+        <module>auth-code</module>
+        <!--商品热卖排行榜-->
+        <module>triumphxxtop</module>
+        <module>auth-code</module>
+        <module>demo</module>
+        <!--接扣安全相关 -->
+        <module>interface-tools</module>
+        <!-- spring boot 全局异常处理 -->
+        <module>global-operation</module>
+        <!--商品热卖榜实现-->
+        <module>selling-list</module>
+    </modules>
+    <groupId>org.triumphxx</groupId>
+    <artifactId>learning</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>learning</name>
+    <packaging>pom</packaging>
+    <description>各种练习</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+        </dependency>
+        <!--  这个小工具能够打印出一个对象在内存中的布局-->
+        <dependency>
+            <groupId>org.openjdk.jol</groupId>
+            <artifactId>jol-core</artifactId>
+            <version>0.15</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

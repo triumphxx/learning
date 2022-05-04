@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.triumphxx.sellinglist.mapper.GoodsMapper">
+
+    <select id="selectSellTop" resultType="org.triumphxx.sellinglist.entity.vo.GoodsVo">
+        SELECT
+        g.goods_id AS goodsId,
+        g.goods_name AS goodsName,
+        s.sell_num sellNum
+        FROM
+        goods g
+        LEFT JOIN
+        sell s ON g.goods_id = sell_id
+
+        ${ew.customSqlSegment}
+    </select>
+</mapper>
