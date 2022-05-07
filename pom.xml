@@ -45,7 +45,6 @@
         <module>files-handle</module>
         <!--auth2 相关学习-->
         <module>auth-code</module>
-        <module>auth-code</module>
         <module>demo</module>
         <!--接扣安全相关 -->
         <module>interface-tools</module>
@@ -53,6 +52,8 @@
         <module>global-operation</module>
         <!--商品热卖榜实现-->
         <module>selling-list</module>
+        <!--邮件发送-->
+        <module>mail-delivery</module>
     </modules>
     <groupId>org.triumphxx</groupId>
     <artifactId>learning</artifactId>
