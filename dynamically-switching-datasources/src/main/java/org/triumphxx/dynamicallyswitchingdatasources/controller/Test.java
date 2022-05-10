@@ -1,8 +1,11 @@
 package org.triumphxx.dynamicallyswitchingdatasources.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.triumphxx.dynamicallyswitchingdatasources.service.UserService;
 
 /**
  * @author:triumphxx
@@ -13,12 +16,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @GitHub https://github.com/triumphxx
  * @Desc:
  **/
-@Controller("/ce")
+@Controller
 public class Test {
-    @RequestMapping(value = "/V1")
+    @Autowired
+    UserService userService;
+    @RequestMapping(value = "/V1", method = RequestMethod.GET)
     @ResponseBody
     public String test(){
         System.out.println("服务正常");
+        userService.master();
+        userService.slave();
         return "200";
     }
 }

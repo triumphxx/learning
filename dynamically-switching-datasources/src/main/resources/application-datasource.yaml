@@ -8,12 +8,12 @@ spring:
       master:
         url: jdbc:oracle:thin:@124.204.68.210:31189:orcl
         username: lis
-        password: 11222
+        password: lis
       # 从库数据源
       slave:
         url:  jdbc:oracle:thin:@124.204.68.210:31189:orcl
         username: lis
-        password: 11222
+        password: lis
     # 初始连接数
     initialSize: 5
     # 最小连接池数量
@@ -33,6 +33,16 @@ spring:
     testWhileIdle: true
     testOnBorrow: false
     testOnReturn: false
+    filter:
+      stat:
+        enabled: true
+        # 慢SQL记录
+        log-slow-sql: true
+        slow-sql-millis: 1
+        merge-sql: true
+      wall:
+        config:
+          multi-statement-allow: true
     druid:
       webStatFilter:
         enabled: true
@@ -44,13 +54,4 @@ spring:
         # 控制台管理用户名和密码
         login-username: triumphxx
         login-password: 123456
-      filter:
-        stat:
-          enabled: true
-          # 慢SQL记录
-          log-slow-sql: true
-          slow-sql-millis: 1000
-          merge-sql: true
-        wall:
-          config:
-            multi-statement-allow: true
+
