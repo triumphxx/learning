@@ -54,6 +54,8 @@
         <module>selling-list</module>
         <!--邮件发送-->
         <module>mail-delivery</module>
+        <!--多数据源动态切换-->
+        <module>dynamically-switching-datasources</module>
     </modules>
     <groupId>org.triumphxx</groupId>
     <artifactId>learning</artifactId>
