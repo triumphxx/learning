@@ -8,12 +8,12 @@ spring:
       master:
         url: jdbc:oracle:thin:@124.204.68.210:31189:orcl
         username: lis
-        password: lis
+        password: 11222
       # 从库数据源
       slave:
         url:  jdbc:oracle:thin:@124.204.68.210:31189:orcl
         username: lis
-        password: lis
+        password: 11222
     # 初始连接数
     initialSize: 5
     # 最小连接池数量
