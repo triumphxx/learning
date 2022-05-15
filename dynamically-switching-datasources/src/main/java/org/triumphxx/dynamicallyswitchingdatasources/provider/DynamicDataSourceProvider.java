@@ -14,7 +14,6 @@ import java.util.Map;
  * @Desc: 数据源配置类获取配置文件中的信息
  **/
 public interface DynamicDataSourceProvider {
-    String DEFAULT_DATASOURCE = "master";
     /**
      * 加载所有的数据源
      * @return

@@ -1,5 +1,6 @@
 package org.triumphxx.dynamicallyswitchingdatasources.dynamic;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
+import org.triumphxx.dynamicallyswitchingdatasources.prop.DataSourceType;
 import org.triumphxx.dynamicallyswitchingdatasources.provider.DynamicDataSourceProvider;
 
 import java.util.HashMap;
@@ -21,7 +22,7 @@ public class DynamicDataSource extends AbstractRoutingDataSource {
         this.dynamicDataSourceProvider = dynamicDataSourceProvider;
         Map<Object, Object> targetDataSources = new HashMap<>(dynamicDataSourceProvider.loadDataSources());
         super.setTargetDataSources(targetDataSources);
-        super.setDefaultTargetDataSource(dynamicDataSourceProvider.loadDataSources().get(DynamicDataSourceProvider.DEFAULT_DATASOURCE));
+        super.setDefaultTargetDataSource(targetDataSources.get(DataSourceType.DEFAULT_DS_NAME));
         super.afterPropertiesSet();
     }
 

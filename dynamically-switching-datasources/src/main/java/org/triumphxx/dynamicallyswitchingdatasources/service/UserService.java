@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.triumphxx.dynamicallyswitchingdatasources.annotation.DataSource;
 import org.triumphxx.dynamicallyswitchingdatasources.mapper.UserMapper;
+import org.triumphxx.dynamicallyswitchingdatasources.model.User;
+
+import java.util.List;
 
 /**
  * @author:triumphxx
@@ -28,5 +31,9 @@ public class UserService {
     @DataSource("slave")
     public Integer slave() {
         return userMapper.count();
+    }
+
+    public List<User> getAllUsers() {
+        return userMapper.getUsers();
     }
 }

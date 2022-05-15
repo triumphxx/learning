@@ -1,19 +1,22 @@
+server:
+  port: 8081
+
 # 数据源配置
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    driverClassName: oracle.jdbc.driver.OracleDriver
+    driverClassName: com.mysql.cj.jdbc.Driver
     ds:
       # 主库数据源，默认 master 不能变
       master:
-        url: jdbc:oracle:thin:@124.204.68.210:31189:orcl
-        username: lis
-        password: lis
+        url: jdbc:mysql://localhost:3306/triumphblog?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8
+        username: root
+        password: root
       # 从库数据源
       slave:
-        url:  jdbc:oracle:thin:@124.204.68.210:31189:orcl
-        username: lis
-        password: lis
+        url:  jdbc:mysql://localhost:3306/triumphxxtop?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8
+        username: root
+        password: root
     # 初始连接数
     initialSize: 5
     # 最小连接池数量

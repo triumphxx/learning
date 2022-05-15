@@ -23,7 +23,7 @@ import java.util.Objects;
  * @Desc: 解析注解 @DataSource 切面
  **/
 @Aspect
-@Order(1)
+@Order(2)
 @Component
 public class DataSourceAspect {
     @Pointcut("@annotation(org.triumphxx.dynamicallyswitchingdatasources.annotation.DataSource)"
@@ -37,7 +37,9 @@ public class DataSourceAspect {
         DataSource dataSource = getDataSource(point);
 
         if (Objects.nonNull(dataSource)) {
-            DynamicDataSourceContextHolder.setDataSourceType(dataSource.dataSourceName());
+            //获取注解中数据源的名称
+            String value = dataSource.value();
+            DynamicDataSourceContextHolder.setDataSourceType(value);
         }
 
         try {

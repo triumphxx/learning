@@ -1,6 +1,7 @@
 package org.triumphxx.dynamicallyswitchingdatasources.annotation;
 
 import org.springframework.core.annotation.AliasFor;
+import org.triumphxx.dynamicallyswitchingdatasources.prop.DataSourceType;
 import org.triumphxx.dynamicallyswitchingdatasources.provider.DynamicDataSourceProvider;
 
 import java.lang.annotation.ElementType;
@@ -20,8 +21,6 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.TYPE})
 public @interface DataSource {
-    String dataSourceName() default DynamicDataSourceProvider.DEFAULT_DATASOURCE;
 
-    @AliasFor("dataSourceName")
-    String value() default DynamicDataSourceProvider.DEFAULT_DATASOURCE;
+    String value() default DataSourceType.DEFAULT_DS_NAME;
 }
