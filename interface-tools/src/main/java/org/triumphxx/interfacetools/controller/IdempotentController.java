@@ -68,8 +68,8 @@ public class IdempotentController {
     }
     @GetMapping("/getToken")
     @TimeLog
-    public String getToken() throws IdempotentException {
-        return tokenService.createToken();
+    public Result getToken() throws IdempotentException {
+        return Result.succ(tokenService.createToken());
     }
 }
 
